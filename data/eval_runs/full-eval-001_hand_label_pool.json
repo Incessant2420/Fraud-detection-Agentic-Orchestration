@@ -1,0 +1,808 @@
+[
+  {
+    "case_id": "EVAL-BANK-BANK-3104206",
+    "finding_index": 2,
+    "claim": "User verification is only partial, which is a mild risk factor",
+    "supports_fraud": true,
+    "strength": "WEAK",
+    "cited_evidence": {
+      "EV-001": {
+        "user_id": "U-3cc1ade53c89e4ee",
+        "account_age_days": 3154,
+        "n_events": 1,
+        "lifetime_value": 125.95,
+        "first_seen": "2017-12-27 16:27:41+05:30",
+        "last_seen": "2017-12-27 16:27:41+05:30",
+        "verification_status": "PARTIAL",
+        "sample_size": 1
+      }
+    },
+    "judge_label": "SUPPORTED",
+    "judge_reason": "The evidence directly states that the user verification status is 'PARTIAL', which aligns with the claim."
+  },
+  {
+    "case_id": "EVAL-BANK-BANK-2992772",
+    "finding_index": 0,
+    "claim": "User U-31530c6de830f026 is a verified account, 8.7 years old, with only four historical events and no activity in the past 90 days, showing no recent suspicious behavior.",
+    "supports_fraud": false,
+    "strength": "STRONG",
+    "cited_evidence": {
+      "EV-001": {
+        "user_id": "U-31530c6de830f026",
+        "account_age_days": 3178,
+        "n_events": 4,
+        "lifetime_value": 372.4,
+        "first_seen": "2017-12-03 08:01:46+05:30",
+        "last_seen": "2017-12-25 18:43:04+05:30",
+        "verification_status": "VERIFIED",
+        "sample_size": 4
+      }
+    },
+    "judge_label": "SUPPORTED",
+    "judge_reason": "The evidence directly confirms the user's verification status, age, and historical events, and also shows no recent activity."
+  },
+  {
+    "case_id": "EVAL-BANK-BANK-2999611",
+    "finding_index": 0,
+    "claim": "User verification status is VERIFIED, indicating low fraud risk",
+    "supports_fraud": false,
+    "strength": "STRONG",
+    "cited_evidence": {
+      "EV-001": {
+        "user_id": "U-51e06cea45480769",
+        "account_age_days": 3179,
+        "n_events": 48,
+        "lifetime_value": 2738.6659999999997,
+        "first_seen": "2017-12-02 11:27:29+05:30",
+        "last_seen": "2017-12-28 06:39:32+05:30",
+        "verification_status": "VERIFIED",
+        "sample_size": 48
+      }
+    },
+    "judge_label": "SUPPORTED",
+    "judge_reason": "The evidence directly states the user's verification status as VERIFIED."
+  },
+  {
+    "case_id": "EVAL-BANK-BANK-2988152",
+    "finding_index": 2,
+    "claim": "The user shares no devices, payment methods, addresses, or IPs with other accounts within two hops, reducing exposure to network\u2011based fraud.",
+    "supports_fraud": false,
+    "strength": "WEAK",
+    "cited_evidence": {
+      "EV-003": {
+        "sample_size": 0,
+        "empty": true
+      }
+    },
+    "judge_label": "UNSUPPORTED",
+    "judge_reason": "The evidence is empty and does not provide any information about the user's account connections."
+  },
+  {
+    "case_id": "EVAL-COMMERCE-INJ-HOSTEL-002-000-001",
+    "finding_index": 1,
+    "claim": "Velocity checks show no activity in 1\u2011day, 7\u2011day, 30\u2011day, and 90\u2011day windows, further confirming the absence of suspicious rapid transactions.",
+    "supports_fraud": false,
+    "strength": "MODERATE",
+    "cited_evidence": {
+      "EV-003": {
+        "sample_size": 0,
+        "empty": true
+      },
+      "EV-005": {
+        "sample_size": 0,
+        "empty": true
+      }
+    },
+    "judge_label": "UNSUPPORTED",
+    "judge_reason": "The evidence shows that the sample size is 0, which means there were no transactions to check for velocity, not confirming the absence of suspicious rapid transactions."
+  },
+  {
+    "case_id": "EVAL-COMMERCE-INJ-FAMILY-016-001-001",
+    "finding_index": 0,
+    "claim": "User account is aged 3400 days with only 2 historical events and low lifetime value, indicating low risk",
+    "supports_fraud": false,
+    "strength": "STRONG",
+    "cited_evidence": {
+      "EV-001": {
+        "user_id": "U-FAMILY-016-001",
+        "account_age_days": 3400,
+        "n_events": 2,
+        "lifetime_value": 102.29752812282145,
+        "first_seen": "2017-04-25 05:30:00+05:30",
+        "last_seen": "2018-11-18 05:30:00+05:30",
+        "verification_status": "PARTIAL",
+        "sample_size": 2
+      }
+    },
+    "judge_label": "SUPPORTED",
+    "judge_reason": "The evidence directly provides the account age, number of events, and lifetime value, all of which are used to support the claim."
+  },
+  {
+    "case_id": "EVAL-COMMERCE-INJ-OFFICE-005-000-005",
+    "finding_index": 2,
+    "claim": "No recent activity in the past 30 days across velocity windows, consistent with low activity profile",
+    "supports_fraud": false,
+    "strength": "WEAK",
+    "cited_evidence": {
+      "EV-006": {
+        "sample_size": 0,
+        "empty": true
+      }
+    },
+    "judge_label": "UNSUPPORTED",
+    "judge_reason": "The evidence indicates an empty result set, but does not provide information about the time frame or activity level."
+  },
+  {
+    "case_id": "EVAL-COMMERCE-INJ-PROMO-006-013",
+    "finding_index": 0,
+    "claim": "User U-RING-006-013 is an old account (3291 days), has only one historical event, low lifetime value (35.82), partial verification, no activity in the past 30 days, and shares no device/payment/address/IP entities, indicating low fraud risk.",
+    "supports_fraud": false,
+    "strength": "STRONG",
+    "cited_evidence": {
+      "EV-001": {
+        "user_id": "U-RING-006-013",
+        "account_age_days": 3291,
+        "n_events": 1,
+        "lifetime_value": 35.81596512411022,
+        "first_seen": "2017-08-12 09:10:58.039519+05:30",
+        "last_seen": "2017-08-12 09:10:58.039519+05:30",
+        "verification_status": "PARTIAL",
+        "sample_size": 1
+      },
+      "EV-002": {
+        "sample_size": 0,
+        "empty": true
+      },
+      "EV-003": {
+        "sample_size": 0,
+        "empty": true
+      }
+    },
+    "judge_label": "SUPPORTED",
+    "judge_reason": "The evidence directly provides all necessary information to support the claim."
+  },
+  {
+    "case_id": "EVAL-COMMERCE-INJ-FARM-002-014-003",
+    "finding_index": 0,
+    "claim": "User U-FARM-002-014 has a long\u2011standing (3480 days) verified account, only 4 historical events, no activity in the past 90 days, and no shared device/payment/address/IP entities, indicating low fraud risk.",
+    "supports_fraud": false,
+    "strength": "STRONG",
+    "cited_evidence": {
+      "EV-001": {
+        "user_id": "U-FARM-002-014",
+        "account_age_days": 3480,
+        "n_events": 4,
+        "lifetime_value": 3454.627957987519,
+        "first_seen": "2017-02-04 05:30:00+05:30",
+        "last_seen": "2018-01-17 05:30:00+05:30",
+        "verification_status": "VERIFIED",
+        "sample_size": 4
+      },
+      "EV-002": {
+        "sample_size": 0,
+        "empty": true
+      },
+      "EV-003": {
+        "sample_size": 0,
+        "empty": true
+      },
+      "EV-006": {
+        "sample_size": 0,
+        "empty": true
+      }
+    },
+    "judge_label": "PARTIALLY_SUPPORTED",
+    "judge_reason": "The evidence supports the account age and verification status, but the claim's assertion about no activity in the past 90 days is contradicted by the 'last_seen' timestamp being older than 90 days."
+  },
+  {
+    "case_id": "EVAL-BANK-BANK-3091653",
+    "finding_index": 0,
+    "claim": "User has a long-standing account (3156 days) with only a single transaction in the past year, indicating minimal activity and low fraud propensity",
+    "supports_fraud": false,
+    "strength": "STRONG",
+    "cited_evidence": {
+      "EV-001": {
+        "user_id": "U-b32171f0344f96a5",
+        "account_age_days": 3156,
+        "n_events": 1,
+        "lifetime_value": 100.0,
+        "first_seen": "2017-12-25 05:57:03+05:30",
+        "last_seen": "2017-12-25 05:57:03+05:30",
+        "verification_status": "PARTIAL",
+        "sample_size": 1
+      },
+      "EV-004": {
+        "user_id": "U-b32171f0344f96a5",
+        "events": [
+          {
+            "event_id": "BANK-3091653",
+            "event_type": "TRANSACTION",
+            "timestamp": "2017-12-25 05:57:03+05:30",
+            "amount": 100.0,
+            "domain": "BANK",
+            "outcome": "COMPLETED"
+          }
+        ],
+        "sample_size": 1
+      }
+    },
+    "judge_label": "PARTIALLY_SUPPORTED",
+    "judge_reason": "The evidence shows a long-standing account with a single transaction, but the claim also mentions 'minimal activity and low fraud propensity', which the evidence does not directly support."
+  },
+  {
+    "case_id": "EVAL-BANK-BANK-3084460",
+    "finding_index": 0,
+    "claim": "The user has a long\u2011standing, verified account (3177 days), a modest lifetime value ($881), a history of 22 routine transactions over the past year, no activity in the last 30 days, and no shared device, payment, address, or IP entities with other users, indicating low fraud risk.",
+    "supports_fraud": false,
+    "strength": "STRONG",
+    "cited_evidence": {
+      "EV-001": {
+        "user_id": "U-6cc74bbb46c46146",
+        "account_age_days": 3177,
+        "n_events": 22,
+        "lifetime_value": 881.0,
+        "first_seen": "2017-12-04 04:01:11+05:30",
+        "last_seen": "2017-12-24 03:00:39+05:30",
+        "verification_status": "VERIFIED",
+        "sample_size": 22
+      },
+      "EV-002": {
+        "sample_size": 0,
+        "empty": true
+      },
+      "EV-003": {
+        "sample_size": 0,
+        "empty": true
+      },
+      "EV-004": {
+        "user_id": "U-6cc74bbb46c46146",
+        "events": [
+          {
+            "event_id": "BANK-3084510",
+            "event_type": "TRANSACTION",
+            "timestamp": "2017-12-24 03:00:39+05:30",
+            "amount": 34.0,
+            "domain": "BANK",
+            "outcome": "COMPLETED"
+          },
+          {
+            "event_id": "BANK-3084460",
+            "event_type": "TRANSACTION",
+            "timestamp": "2017-12-24 02:55:47+05:30",
+            "amount": 49.0,
+            "domain": "BANK",
+            "outcome": "COMPLETED"
+          },
+          {
+            "event_id": "BANK-3084393",
+            "event_type": "TRANSACTION",
+            "timestamp": "2017-12-24 02:47:35+05:30",
+            "amount": 117.0,
+            "domain": "BANK",
+            "outcome": "COMPLETED"
+          },
+          {
+            "event_id": "BANK-3061679",
+            "event_type": "TRANSACTION",
+            "timestamp": "2017-12-20 05:07:46+05:30",
+            "amount": 34.0,
+            "domain": "BANK",
+            "outcome": "COMPLETED"
+          },
+          {
+            "event_id": "BANK-3059207",
+            "event_type": "TRANSACTION",
+            "timestamp": "2017-12-19 22:53:15+05:30",
+            "amount": 49.0,
+            "domain": "BANK",
+            "outcome": "COMPLETED"
+          },
+          {
+            "event_id": "BANK-3058296",
+            "event_type": "TRANSACTION",
+            "timestamp": "2017-12-19 20:22:35+05:30",
+            "amount": 44.0,
+            "domain": "BANK",
+            "outcome": "COMPLETED"
+          },
+          {
+            "event_id": "BANK-3052575",
+            "event_type": "TRANSACTION",
+            "timestamp": "2017-12-18 05:57:10+05:30",
+            "amount": 49.0,
+            "domain": "BANK",
+            "outcome": "COMPLETED"
+          },
+          {
+            "event_id": "BANK-3045741",
+            "event_type": "TRANSACTION",
+            "timestamp": "2017-12-16 22:38:53+05:30",
+            "amount": 39.0,
+            "domain": "BANK",
+            "outcome": "COMPLETED"
+          },
+          {
+            "event_id": "BANK-3043657",
+            "event_type": "TRANSACTION",
+            "timestamp": "2017-12-16 07:48:34+05:30",
+            "amount": 29.0,
+            "domain": "BANK",
+            "outcome": "COMPLETED"
+          },
+          {
+            "event_id": "BANK-3042627",
+            "event_type": "TRANSACTION",
+            "timestamp": "2017-12-16 04:01:50+05:30",
+            "amount": 24.0,
+            "domain": "BANK",
+            "outcome": "COMPLETED"
+          },
+          {
+            "event_id": "BANK-3042541",
+            "event_type": "TRANSACTION",
+            "timestamp": "2017-12-16 03:47:09+05:30",
+            "amount": 29.0,
+            "domain": "BANK",
+            "outcome": "COMPLETED"
+          },
+          {
+            "event_id": "BANK-3041160",
+            "event_type": "TRANSACTION",
+            "timestamp": "2017-12-15 23:21:12+05:30",
+            "amount": 29.0,
+            "domain": "BANK",
+            "outcome": "COMPLETED"
+          },
+          {
+            "event_id": "BANK-3041132",
+            "event_type": "TRANSACTION",
+            "timestamp": "2017-12-15 23:16:36+05:30",
+            "amount": 44.0,
+            "domain": "BANK",
+            "outcome": "COMPLETED"
+          },
+          {
+            "event_id": "BANK-3038409",
+            "event_type": "TRANSACTION",
+            "timestamp": "2017-12-15 04:47:01+05:30",
+            "amount": 29.0,
+            "domain": "BANK",
+            "outcome": "COMPLETED"
+          },
+          {
+            "event_id": "BANK-3038384",
+            "event_type": "TRANSACTION",
+            "timestamp": "2017-12-15 04:42:32+05:30",
+            "amount": 44.0,
+            "domain": "BANK",
+            "outcome": "COMPLETED"
+          },
+          {
+            "event_id": "BANK-3030975",
+            "event_type": "TRANSACTION",
+            "timestamp": "2017-12-13 08:23:01+05:30",
+            "amount": 49.0,
+            "domain": "BANK",
+            "outcome": "COMPLETED"
+          },
+          {
+            "event_id": "BANK-3024165",
+            "event_type": "TRANSACTION",
+            "timestamp": "2017-12-11 23:07:12+05:30",
+            "amount": 49.0,
+            "domain": "BANK",
+            "outcome": "COMPLETED"
+          },
+          {
+            "event_id": "BANK-2997022",
+            "event_type": "TRANSACTION",
+            "timestamp": "2017-12-04 20:35:54+05:30",
+            "amount": 25.0,
+            "domain": "BANK",
+            "outcome": "COMPLETED"
+          },
+          {
+            "event_id": "BANK-2995936",
+            "event_type": "TRANSACTION",
+            "timestamp": "2017-12-04 05:55:40+05:30",
+            "amount": 20.0,
+            "domain": "BANK",
+            "outcome": "COMPLETED"
+          },
+          {
+            "event_id": "BANK-2995862",
+            "event_type": "TRANSACTION",
+            "timestamp": "2017-12-04 05:31:36+05:30",
+            "amount": 25.0,
+            "domain": "BANK",
+            "outcome": "COMPLETED"
+          },
+          {
+            "event_id": "BANK-2995516",
+            "event_type": "TRANSACTION",
+            "timestamp": "2017-12-04 04:05:32+05:30",
+            "amount": 30.0,
+            "domain": "BANK",
+            "outcome": "COMPLETED"
+          },
+          {
+            "event_id": "BANK-2995492",
+            "event_type": "TRANSACTION",
+            "timestamp": "2017-12-04 04:01:11+05:30",
+            "amount": 40.0,
+            "domain": "BANK",
+            "outcome": "COMPLETED"
+          }
+        ],
+        "sample_size": 22
+      },
+      "EV-006": {
+        "sample_size": 0,
+        "empty": true
+      }
+    },
+    "judge_label": "PARTIALLY_SUPPORTED",
+    "judge_reason": "The evidence shows a verified account with a long-standing history of routine transactions, but the claim's assertion of 'no activity in the last 30 days' is contradicted by the evidence, which shows recent transactions."
+  },
+  {
+    "case_id": "EVAL-BANK-BANK-3058670",
+    "finding_index": 0,
+    "claim": "User has a long-standing verified account with low recent activity and no suspicious transaction patterns.",
+    "supports_fraud": false,
+    "strength": "STRONG",
+    "cited_evidence": {
+      "EV-001": {
+        "user_id": "U-df60d22660604b12",
+        "account_age_days": 3164,
+        "n_events": 9,
+        "lifetime_value": 750.0,
+        "first_seen": "2017-12-17 21:32:46+05:30",
+        "last_seen": "2017-12-20 10:42:05+05:30",
+        "verification_status": "VERIFIED",
+        "sample_size": 9
+      },
+      "EV-004": {
+        "user_id": "U-df60d22660604b12",
+        "events": [
+          {
+            "event_id": "BANK-3063257",
+            "event_type": "TRANSACTION",
+            "timestamp": "2017-12-20 10:42:05+05:30",
+            "amount": 50.0,
+            "domain": "BANK",
+            "outcome": "COMPLETED"
+          },
+          {
+            "event_id": "BANK-3058936",
+            "event_type": "TRANSACTION",
+            "timestamp": "2017-12-19 22:11:03+05:30",
+            "amount": 100.0,
+            "domain": "BANK",
+            "outcome": "COMPLETED"
+          },
+          {
+            "event_id": "BANK-3058876",
+            "event_type": "TRANSACTION",
+            "timestamp": "2017-12-19 22:01:54+05:30",
+            "amount": 100.0,
+            "domain": "BANK",
+            "outcome": "COMPLETED"
+          },
+          {
+            "event_id": "BANK-3058702",
+            "event_type": "TRANSACTION",
+            "timestamp": "2017-12-19 21:35:32+05:30",
+            "amount": 100.0,
+            "domain": "BANK",
+            "outcome": "COMPLETED"
+          },
+          {
+            "event_id": "BANK-3058670",
+            "event_type": "TRANSACTION",
+            "timestamp": "2017-12-19 21:31:12+05:30",
+            "amount": 100.0,
+            "domain": "BANK",
+            "outcome": "COMPLETED"
+          },
+          {
+            "event_id": "BANK-3058652",
+            "event_type": "TRANSACTION",
+            "timestamp": "2017-12-19 21:29:00+05:30",
+            "amount": 100.0,
+            "domain": "BANK",
+            "outcome": "COMPLETED"
+          },
+          {
+            "event_id": "BANK-3058647",
+            "event_type": "TRANSACTION",
+            "timestamp": "2017-12-19 21:27:52+05:30",
+            "amount": 100.0,
+            "domain": "BANK",
+            "outcome": "COMPLETED"
+          },
+          {
+            "event_id": "BANK-3049971",
+            "event_type": "TRANSACTION",
+            "timestamp": "2017-12-17 21:33:46+05:30",
+            "amount": 50.0,
+            "domain": "BANK",
+            "outcome": "COMPLETED"
+          },
+          {
+            "event_id": "BANK-3049963",
+            "event_type": "TRANSACTION",
+            "timestamp": "2017-12-17 21:32:46+05:30",
+            "amount": 50.0,
+            "domain": "BANK",
+            "outcome": "COMPLETED"
+          }
+        ],
+        "sample_size": 9
+      }
+    },
+    "judge_label": "UNSUPPORTED",
+    "judge_reason": "The evidence shows a high frequency of recent transactions, contradicting the claim of low recent activity."
+  },
+  {
+    "case_id": "EVAL-BANK-BANK-2999611",
+    "finding_index": 1,
+    "claim": "No recent activity in the past 30 days and no shared entities, further reducing suspicion",
+    "supports_fraud": false,
+    "strength": "MODERATE",
+    "cited_evidence": {
+      "EV-002": {
+        "sample_size": 0,
+        "empty": true
+      },
+      "EV-003": {
+        "sample_size": 0,
+        "empty": true
+      },
+      "EV-006": {
+        "sample_size": 0,
+        "empty": true
+      }
+    },
+    "judge_label": "UNSUPPORTED",
+    "judge_reason": "The evidence shows that the tools returned empty results, but it does not provide information about recent activity or shared entities."
+  },
+  {
+    "case_id": "EVAL-BANK-BANK-3101745",
+    "finding_index": 1,
+    "claim": "No activity has been observed in any recent velocity window (1d,7d,30d,90d), reinforcing the low likelihood of recent fraudulent behavior.",
+    "supports_fraud": false,
+    "strength": "MODERATE",
+    "cited_evidence": {
+      "EV-003": {
+        "sample_size": 0,
+        "empty": true
+      },
+      "EV-005": {
+        "sample_size": 0,
+        "empty": true
+      }
+    },
+    "judge_label": "UNSUPPORTED",
+    "judge_reason": "The evidence shows empty samples, but it does not provide any information about recent velocity windows."
+  },
+  {
+    "case_id": "EVAL-BANK-BANK-2988558",
+    "finding_index": 1,
+    "claim": "No transactions in the past 30 days and no activity in any velocity window, indicating low immediate risk",
+    "supports_fraud": false,
+    "strength": "MODERATE",
+    "cited_evidence": {
+      "EV-002": {
+        "sample_size": 0,
+        "empty": true
+      },
+      "EV-003": {
+        "sample_size": 0,
+        "empty": true
+      }
+    },
+    "judge_label": "UNSUPPORTED",
+    "judge_reason": "The evidence shows no transactions in the past 30 days, but it does not provide information about activity in any velocity window."
+  },
+  {
+    "case_id": "EVAL-BANK-BANK-3011507",
+    "finding_index": 0,
+    "claim": "User is verified, has a long account age (3175 days), low recent activity (no events in last 30 days) and no shared entities, indicating low fraud risk.",
+    "supports_fraud": false,
+    "strength": "STRONG",
+    "cited_evidence": {
+      "EV-001": {
+        "user_id": "U-f69381ffb134b64c",
+        "account_age_days": 3175,
+        "n_events": 9,
+        "lifetime_value": 695.825,
+        "first_seen": "2017-12-06 05:56:28+05:30",
+        "last_seen": "2017-12-12 23:10:31+05:30",
+        "verification_status": "VERIFIED",
+        "sample_size": 9
+      },
+      "EV-002": {
+        "sample_size": 0,
+        "empty": true
+      },
+      "EV-004": {
+        "user_id": "U-f69381ffb134b64c",
+        "events": [
+          {
+            "event_id": "BANK-3028262",
+            "event_type": "TRANSACTION",
+            "timestamp": "2017-12-12 23:10:31+05:30",
+            "amount": 152.163,
+            "domain": "BANK",
+            "outcome": "COMPLETED"
+          },
+          {
+            "event_id": "BANK-3028149",
+            "event_type": "TRANSACTION",
+            "timestamp": "2017-12-12 22:48:13+05:30",
+            "amount": 134.673,
+            "domain": "BANK",
+            "outcome": "COMPLETED"
+          },
+          {
+            "event_id": "BANK-3021441",
+            "event_type": "TRANSACTION",
+            "timestamp": "2017-12-11 01:58:42+05:30",
+            "amount": 100.159,
+            "domain": "BANK",
+            "outcome": "COMPLETED"
+          },
+          {
+            "event_id": "BANK-3016674",
+            "event_type": "TRANSACTION",
+            "timestamp": "2017-12-09 22:53:50+05:30",
+            "amount": 40.927,
+            "domain": "BANK",
+            "outcome": "COMPLETED"
+          },
+          {
+            "event_id": "BANK-3013672",
+            "event_type": "TRANSACTION",
+            "timestamp": "2017-12-09 01:55:49+05:30",
+            "amount": 48.336,
+            "domain": "BANK",
+            "outcome": "COMPLETED"
+          },
+          {
+            "event_id": "BANK-3013264",
+            "event_type": "TRANSACTION",
+            "timestamp": "2017-12-09 00:27:11+05:30",
+            "amount": 41.811,
+            "domain": "BANK",
+            "outcome": "COMPLETED"
+          },
+          {
+            "event_id": "BANK-3011616",
+            "event_type": "TRANSACTION",
+            "timestamp": "2017-12-08 09:46:21+05:30",
+            "amount": 30.936,
+            "domain": "BANK",
+            "outcome": "COMPLETED"
+          },
+          {
+            "event_id": "BANK-3011507",
+            "event_type": "TRANSACTION",
+            "timestamp": "2017-12-08 08:53:37+05:30",
+            "amount": 61.628,
+            "domain": "BANK",
+            "outcome": "COMPLETED"
+          },
+          {
+            "event_id": "BANK-3003264",
+            "event_type": "TRANSACTION",
+            "timestamp": "2017-12-06 05:56:28+05:30",
+            "amount": 85.192,
+            "domain": "BANK",
+            "outcome": "COMPLETED"
+          }
+        ],
+        "sample_size": 9
+      },
+      "EV-003": {
+        "sample_size": 0,
+        "empty": true
+      }
+    },
+    "judge_label": "UNSUPPORTED",
+    "judge_reason": "The evidence shows recent activity (9 events in the last 8 days) which contradicts the claim of low recent activity."
+  },
+  {
+    "case_id": "EVAL-BANK-BANK-3087301",
+    "finding_index": 1,
+    "claim": "No transactions or velocity signals in the past 30 days, indicating no recent suspicious activity.",
+    "supports_fraud": false,
+    "strength": "MODERATE",
+    "cited_evidence": {
+      "EV-002": {
+        "sample_size": 0,
+        "empty": true
+      },
+      "EV-003": {
+        "sample_size": 0,
+        "empty": true
+      }
+    },
+    "judge_label": "SUPPORTED",
+    "judge_reason": "The evidence directly shows that there were no transactions or velocity signals in the past 30 days."
+  },
+  {
+    "case_id": "EVAL-COMMERCE-COMM-800ebc071b1dcbab630e96af15a7a1ef",
+    "finding_index": 1,
+    "claim": "Partial verification status suggests some identity uncertainty but does not outweigh the low activity and risk indicators.",
+    "supports_fraud": false,
+    "strength": "MODERATE",
+    "cited_evidence": {
+      "EV-001": {
+        "user_id": "U-2cc0f5affc2ccbdacbbc6c5e88f5f059",
+        "account_age_days": 3375,
+        "n_events": 1,
+        "lifetime_value": 325.12,
+        "first_seen": "2017-05-20 02:44:49+05:30",
+        "last_seen": "2017-05-20 02:44:49+05:30",
+        "verification_status": "PARTIAL",
+        "sample_size": 1
+      }
+    },
+    "judge_label": "PARTIALLY_SUPPORTED",
+    "judge_reason": "The evidence shows a partial verification status, which aligns with the claim, but the low activity and risk indicators are not directly supported by the provided data."
+  },
+  {
+    "case_id": "EVAL-BANK-BANK-2988558",
+    "finding_index": 0,
+    "claim": "User account is long-standing (3179 days) and verified, which strongly mitigates fraud risk",
+    "supports_fraud": false,
+    "strength": "STRONG",
+    "cited_evidence": {
+      "EV-001": {
+        "user_id": "U-dc05665984244753",
+        "account_age_days": 3179,
+        "n_events": 57,
+        "lifetime_value": 4285.5199999999995,
+        "first_seen": "2017-12-02 12:35:18+05:30",
+        "last_seen": "2017-12-26 22:38:48+05:30",
+        "verification_status": "VERIFIED",
+        "sample_size": 57
+      }
+    },
+    "judge_label": "PARTIALLY_SUPPORTED",
+    "judge_reason": "The evidence shows a long-standing account, but the claim also mentions 'strongly mitigates fraud risk', which the evidence does not directly support."
+  },
+  {
+    "case_id": "EVAL-BANK-BANK-3025399",
+    "finding_index": 0,
+    "claim": "User exhibits low fraud risk: verified account, long tenure, minimal recent activity, no shared entities, and few historical events.",
+    "supports_fraud": false,
+    "strength": "STRONG",
+    "cited_evidence": {
+      "EV-001": {
+        "user_id": "U-1208c837753dcbcb",
+        "account_age_days": 3169,
+        "n_events": 3,
+        "lifetime_value": 443.0,
+        "first_seen": "2017-12-12 03:33:46+05:30",
+        "last_seen": "2017-12-26 03:39:31+05:30",
+        "verification_status": "VERIFIED",
+        "sample_size": 3
+      },
+      "EV-002": {
+        "sample_size": 0,
+        "empty": true
+      },
+      "EV-003": {
+        "sample_size": 0,
+        "empty": true
+      },
+      "EV-006": {
+        "sample_size": 0,
+        "empty": true
+      }
+    },
+    "judge_label": "PARTIALLY_SUPPORTED",
+    "judge_reason": "The evidence supports the claim of verified account and long tenure, but the claim of minimal recent activity is contradicted by the fact that the user was last seen in 2017."
+  }
+]

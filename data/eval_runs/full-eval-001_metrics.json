@@ -1,0 +1,99 @@
+{
+  "run_id": "full-eval-001",
+  "n_cases_in_results": 68,
+  "n_cases_in_eval_set": 120,
+  "decision_accuracy_and_macro_f1": {
+    "accuracy": {
+      "point": 0.22058823529411764,
+      "ci_low": 0.11764705882352941,
+      "ci_high": 0.3235294117647059,
+      "n": 68
+    },
+    "macro_f1_point_estimate": 0.1374901652242329,
+    "n": 68
+  },
+  "pre_validation_uncited_claim_rate": {
+    "point": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.0,
+    "n": 68
+  },
+  "post_validation_uncited_claim_rate": {
+    "rate": 0.0,
+    "violations": 0,
+    "n": 68
+  },
+  "json_repair_rescue_rate": {
+    "rate": null,
+    "needed": 0,
+    "rescued": 0
+  },
+  "retry_rescue_rate": {
+    "rate": null,
+    "first_attempt_failures": 0,
+    "rescued": 0
+  },
+  "retry_rate": {
+    "point": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.0,
+    "n": 68
+  },
+  "escalation_precision_recall_on_insufficient_evidence": {
+    "precision": 0.2391304347826087,
+    "recall": 0.6875,
+    "tp": 11,
+    "fp": 35,
+    "fn": 5,
+    "tn": 17
+  },
+  "mean_tool_calls_and_critic_rate": {
+    "mean_tool_calls_per_case": {
+      "point": 6.0,
+      "ci_low": 6.0,
+      "ci_high": 6.0,
+      "n": 68
+    },
+    "critic_trigger_rate": {
+      "point": 1.0,
+      "ci_low": 1.0,
+      "ci_high": 1.0,
+      "n": 68
+    }
+  },
+  "token_budget_report": [
+    {
+      "node": "critic",
+      "model": "llama-3.1-8b-instant",
+      "cases": 28,
+      "prompt_tokens": 25497,
+      "completion_tokens": 4271,
+      "total_tokens": 29768
+    },
+    {
+      "node": "critic",
+      "model": "llama-3.3-70b-versatile",
+      "cases": 40,
+      "prompt_tokens": 69092,
+      "completion_tokens": 7543,
+      "total_tokens": 76635
+    },
+    {
+      "node": "executor",
+      "model": "llama-3.1-8b-instant",
+      "cases": 69,
+      "prompt_tokens": 141612,
+      "completion_tokens": 24139,
+      "total_tokens": 165751
+    },
+    {
+      "node": "synthesizer",
+      "model": "openai/gpt-oss-120b",
+      "cases": 68,
+      "prompt_tokens": 90996,
+      "completion_tokens": 54004,
+      "total_tokens": 145000
+    }
+  ],
+  "total_tokens": 417154
+}

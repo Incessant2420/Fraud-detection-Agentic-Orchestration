@@ -1,0 +1,48 @@
+# Synthetic abuse-pattern injection parameters for the Olist commerce arm.
+# Olist has no fraud label; these patterns are injected deterministically
+# from `seed` so the eval set is reproducible.
+
+seed: 20260817
+
+promo_ring:
+  label: PROMO_RING
+  n_rings: 14
+  ring_size_min: 8
+  ring_size_max: 20
+  first_order_window_hours: 48
+
+courier_collusion:
+  label: COLLUSION
+  n_collusive_pairs: 10
+  min_orders_per_pair: 6
+  item_missing_rate_min: 0.35
+  item_missing_rate_baseline: 0.03
+  geo_cluster_radius_km: 3
+
+address_farm:
+  label: ADDRESS_FARM
+  n_farms: 10
+  addresses_per_farm_min: 6
+  addresses_per_farm_max: 15
+  geohash_precision: 6
+  high_value_multiplier: 2.5
+  refund_rate_min: 0.30
+
+hard_negatives:
+  label: NONE
+  # Target ~1.5x the volume of true rings (promo_ring + address_farm
+  # cluster count) so the agent cannot simply pattern-match "shared
+  # device/address => fraud" and pass eval by coincidence.
+  volume_multiplier_of_true_rings: 1.5
+  family_household:
+    n_clusters: 18
+    members_per_cluster_min: 2
+    members_per_cluster_max: 5
+  shared_office:
+    n_clusters: 8
+    members_per_cluster_min: 6
+    members_per_cluster_max: 25
+  shared_accommodation:
+    n_clusters: 8
+    members_per_cluster_min: 4
+    members_per_cluster_max: 12

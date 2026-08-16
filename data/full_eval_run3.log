@@ -1,0 +1,19 @@
+running 120 cases as run_id=full-eval-001
+resuming run full-eval-001 from case index 40/120
+rate limit exhausted after backoff at case 68, checkpointing and stopping: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m061ma0nej1sttmcndresq0t` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199472, Requested 2220. Please try again in 12m10.944s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+{
+  "run_id": "full-eval-001",
+  "results_path": "data/eval_runs/full-eval-001.jsonl",
+  "n_cases_requested": 120,
+  "total_tokens": 417154,
+  "cache_stats": {
+    "hits": 65,
+    "misses": 62,
+    "hit_rate": 0.5118110236220472
+  }
+}
+token report:
+{'node': 'critic', 'model': 'llama-3.1-8b-instant', 'cases': 28, 'prompt_tokens': 25497, 'completion_tokens': 4271, 'total_tokens': 29768}
+{'node': 'critic', 'model': 'llama-3.3-70b-versatile', 'cases': 40, 'prompt_tokens': 69092, 'completion_tokens': 7543, 'total_tokens': 76635}
+{'node': 'executor', 'model': 'llama-3.1-8b-instant', 'cases': 69, 'prompt_tokens': 141612, 'completion_tokens': 24139, 'total_tokens': 165751}
+{'node': 'synthesizer', 'model': 'openai/gpt-oss-120b', 'cases': 68, 'prompt_tokens': 90996, 'completion_tokens': 54004, 'total_tokens': 145000}

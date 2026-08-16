@@ -1,0 +1,17 @@
+running 120 cases as run_id=full-eval-001
+rate limit exhausted after backoff at case 40, checkpointing and stopping: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01m061ma0nej1sttmcndresq0t` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99552, Requested 1533. Please try again in 15m37.44s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+{
+  "run_id": "full-eval-001",
+  "results_path": "data/eval_runs/full-eval-001.jsonl",
+  "n_cases_requested": 120,
+  "total_tokens": 250916,
+  "cache_stats": {
+    "hits": 31,
+    "misses": 149,
+    "hit_rate": 0.17222222222222222
+  }
+}
+token report:
+{'node': 'critic', 'model': 'llama-3.3-70b-versatile', 'cases': 40, 'prompt_tokens': 69092, 'completion_tokens': 7543, 'total_tokens': 76635}
+{'node': 'executor', 'model': 'llama-3.1-8b-instant', 'cases': 41, 'prompt_tokens': 75112, 'completion_tokens': 12425, 'total_tokens': 87537}
+{'node': 'synthesizer', 'model': 'openai/gpt-oss-120b', 'cases': 41, 'prompt_tokens': 54286, 'completion_tokens': 32458, 'total_tokens': 86744}

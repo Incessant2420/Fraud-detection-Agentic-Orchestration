@@ -1,0 +1,4 @@
+=== no_critic on 9 cases ===
+{"run_id": "ablation-no_critic", "results_path": "data/eval_runs/ablation-no_critic.jsonl", "n_cases_requested": 9, "total_tokens": 0, "cache_stats": {"hits": 27, "misses": 0, "hit_rate": 1.0}}
+=== single_shot_baseline on 9 cases ===
+{"run_id": "ablation-single_shot_baseline", "results_path": "data/eval_runs/ablation-single_shot_baseline.jsonl", "n_cases_requested": 9, "total_tokens": 17224, "cache_stats": {"hits": 0, "misses": 9, "hit_rate": 0.0}}

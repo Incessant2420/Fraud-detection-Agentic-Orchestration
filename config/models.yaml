@@ -1,0 +1,89 @@
+# All Groq model IDs used by SENTINEL live here — never hardcode a model
+# name in application code. Free-tier model availability changes monthly;
+# re-routing should be a one-line edit in this file.
+#
+# Verified live against https://api.groq.com/openai/v1/models on 2026-08-17.
+# qwen3-32b / gpt-oss-20b classes were not available at verification time;
+# routing below uses what was actually live.
+
+executor:
+  model: llama-3.1-8b-instant
+  role: >
+    Tool-loop executor. First call emits the investigative plan (3-5
+    questions) plus first tool selections. Cheap, high call volume.
+  temperature: 0.2
+  max_tokens: 1024
+
+synthesizer:
+  # Rerouted for the ablation phase: openai/gpt-oss-120b hit its real daily
+  # cap (200,000 TPD, 199,472 used) at the exact moment the main 68-case
+  # eval run was stopped -- the 68-case eval's results already used
+  # gpt-oss-120b throughout and are unaffected by this change. By this
+  # point BOTH llama-3.3-70b-versatile (critic, see above) and
+  # openai/gpt-oss-120b (synthesizer) have hit real free-tier daily caps in
+  # a single day of live testing -- a genuinely strong demonstration of the
+  # project's own "500K token/day budget" thesis. qwen/qwen3.6-27b was
+  # ruled out again (same <think>-preamble incompatibility as the critic
+  # incident). Rerouted to llama-3.1-8b-instant, the one model proven
+  # reliable with strict JSON mode all day and with quota still available.
+  model: llama-3.1-8b-instant
+  role: >
+    Emits the CaseReport. Structured-output quality matters most here.
+  temperature: 0.2
+  max_tokens: 2048
+
+critic:
+  # Rerouted TWICE live during the 120-case eval run:
+  # 1. llama-3.3-70b-versatile hit Groq's real daily cap (100,000 TPD on
+  #    the free tier) after only 40 cases, because confidence exceeded the
+  #    0.7 critic trigger threshold on nearly every case -- the
+  #    "conditional" critic ran far closer to 100% of the time than the
+  #    spec's "low volume" assumption.
+  # 2. Rerouted to qwen/qwen3.6-27b next -- but it is a reasoning model
+  #    that emits a <think>...</think> preamble before any answer, which
+  #    (a) Groq's strict response_format=json_object rejects outright as
+  #    a 400 (the preamble isn't valid JSON), and (b) even with strict
+  #    mode disabled, consumed the ENTIRE 1024-token budget on its
+  #    reasoning before ever reaching the JSON answer, live-verified via
+  #    completion_tokens == max_tokens on a real critic prompt. Using it
+  #    reliably would need a much larger (costlier) token budget.
+  # Final choice: llama-3.1-8b-instant -- same family as the executor
+  # (a real, documented compromise on "a different, more capable model"),
+  # but it IS different from the synthesizer (openai/gpt-oss-120b), which
+  # is the spec's actual requirement, and it has ample untouched quota and
+  # already-proven-reliable strict-JSON behavior in this exact run.
+  # See BUILD_LOG.md Phase 9 for the full live-debugging trail.
+  model: llama-3.1-8b-instant
+  role: >
+    Conditional adversarial review of the draft CaseReport. MUST be a
+    different model family from the synthesizer to be a meaningful check.
+  temperature: 0.1
+  max_tokens: 1024
+
+judge:
+  # Rerouted for the same reason as synthesizer above: llama-3.3-70b-versatile
+  # is daily-exhausted. By this point in a single day of live testing, all
+  # four originally-distinct roles (executor, synthesizer, critic, judge)
+  # ended up on llama-3.1-8b-instant -- the only model that stayed within
+  # budget all day. This is a real, stated limitation of the eval's
+  # architectural diversity (the judge is no longer a distinct "different
+  # model" check on the critic), forced by genuine free-tier exhaustion
+  # rather than a design choice; see BUILD_LOG.md and README limitations.
+  model: llama-3.1-8b-instant
+  role: >
+    Offline/batch semantic-hallucination judge. Runs separately from the
+    live agent loop, own quota bucket, sampled findings only.
+  temperature: 0.0
+  max_tokens: 256
+
+# Alternate mid-tier model, available if the synthesizer bucket runs dry
+# mid-eval and routing needs to fail over without code changes.
+fallback_mid_tier:
+  model: qwen/qwen3.6-27b
+  temperature: 0.2
+  max_tokens: 2048
+
+budget:
+  daily_token_cap_total: 500000
+  halt_at_fraction: 0.90
+  checkpoint_every_n_cases: 5

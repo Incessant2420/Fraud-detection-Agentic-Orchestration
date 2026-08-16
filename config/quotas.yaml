@@ -1,0 +1,38 @@
+probed_at_note: live probe via chat-completions ratelimit headers
+models:
+  llama-3.1-8b-instant:
+    model: llama-3.1-8b-instant
+    http_status: 200
+    limit-requests: '14400'
+    remaining-requests: '14399'
+    limit-tokens: '6000'
+    remaining-tokens: '5963'
+    reset-requests: 6s
+    reset-tokens: 370ms
+  llama-3.3-70b-versatile:
+    model: llama-3.3-70b-versatile
+    http_status: 200
+    limit-requests: '1000'
+    remaining-requests: '999'
+    limit-tokens: '12000'
+    remaining-tokens: '11963'
+    reset-requests: 1m26.4s
+    reset-tokens: 185ms
+  openai/gpt-oss-120b:
+    model: openai/gpt-oss-120b
+    http_status: 200
+    limit-requests: '1000'
+    remaining-requests: '999'
+    limit-tokens: '8000'
+    remaining-tokens: '7927'
+    reset-requests: 1m26.4s
+    reset-tokens: 547ms
+  qwen/qwen3.6-27b:
+    model: qwen/qwen3.6-27b
+    http_status: 200
+    limit-requests: '1000'
+    remaining-requests: '999'
+    limit-tokens: '8000'
+    remaining-tokens: '7988'
+    reset-requests: 1m26.4s
+    reset-tokens: 90ms

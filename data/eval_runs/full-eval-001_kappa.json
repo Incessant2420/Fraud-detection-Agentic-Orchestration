@@ -1,0 +1,16 @@
+{
+  "run_id": "full-eval-001",
+  "n_labeled": 20,
+  "cohens_kappa": 0.25925925925925924,
+  "raw_agreement": 0.5,
+  "judge_label_distribution": {
+    "UNSUPPORTED": 8,
+    "SUPPORTED": 6,
+    "PARTIALLY_SUPPORTED": 6
+  },
+  "hand_label_distribution": {
+    "UNSUPPORTED": 5,
+    "SUPPORTED": 13,
+    "PARTIALLY_SUPPORTED": 2
+  }
+}

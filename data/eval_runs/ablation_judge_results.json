@@ -1,0 +1,29 @@
+{
+  "full_system": {
+    "n_sampled": 16,
+    "n_available": 16,
+    "counts": {
+      "SUPPORTED": 5,
+      "PARTIALLY_SUPPORTED": 5,
+      "UNSUPPORTED": 6
+    },
+    "semantic_hallucination_rate": 0.375,
+    "partially_supported_rate": 0.3125,
+    "supported_rate": 0.3125
+  },
+  "no_critic": {
+    "n_sampled": 16,
+    "n_available": 16,
+    "counts": {
+      "SUPPORTED": 5,
+      "PARTIALLY_SUPPORTED": 5,
+      "UNSUPPORTED": 6
+    },
+    "semantic_hallucination_rate": 0.375,
+    "partially_supported_rate": 0.3125,
+    "supported_rate": 0.3125
+  },
+  "single_shot_baseline": {
+    "n_available": 0
+  }
+}

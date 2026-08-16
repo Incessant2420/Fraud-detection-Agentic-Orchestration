@@ -1,0 +1,10 @@
+.env
+__pycache__/
+*.pyc
+.venv/
+data/raw/
+data/processed/
+*.duckdb
+chroma_db/
+.pytest_cache/
+*.sqlite
