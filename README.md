@@ -310,23 +310,4 @@ python scripts/write_worked_example.py <run_id>
 streamlit run sentinel/ui/app.py
 ```
 
-## Interview talking points
 
-- Why a state machine rather than a ReAct loop (controllability, forced escalation,
-  bounded retries).
-- Why tools return facts, not judgements.
-- Why a deterministic escalation gate exists *despite* having an LLM critic -- and why
-  that matters more on a smaller model (demonstrated live: a 0.92-confidence draft was
-  correctly overridden because its network finding rested on `sample_size < 5`).
-- The `sample_size` trap in `get_geo_risk`/`get_shared_entity_network` and how the
-  agent (and the gate, as a backstop) learns to discount small-n evidence.
-- Why hard negatives were essential, and what the system's failure modes on them were.
-- Why running on constrained open-weights models made the enforcement layer's value
-  measurable rather than hypothetical -- three real, compounding bugs (tool-list
-  computed before registration, case-sensitive fuzzy matching, an unwrapped tool
-  function crashing on dispatch) were only surfaced by actually running live batches
-  and reading the raw output, not by unit tests alone.
-- How the system is architected within a 500K token/day budget: ledger compression,
-  conditional critic, per-model quota routing, response caching.
-- What productionizing needs: a human feedback loop, drift monitoring on the baseline
-  model, per-analyst calibration, per-case cost ceilings.
